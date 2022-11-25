@@ -1,0 +1,32 @@
+<html ng-app>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  </head>
+  <body ng-app="">
+    <h1> Welcome </h1>
+    <h2>Homepage</h2>
+    <h3>Registration/Login</h3>
+    <form name="form">
+        <!-- usage of ng-hide -->
+        <div ng-hide="toShow">
+            <label>Enter Username:</label>
+            <br>
+            <input type="text" required ng-model="Name"/>
+            <br>
+            <label>Enter Password:</label>
+            <br>
+            <input type="text" required ng-model="Password"/>
+            <br>
+            <br>
+        <!-- usage of ng-click -->
+            <input type="button" ng-disabled="form.$invalid" ng-click="toShow=true" value="Sign In">
+        </div>
+        <!-- usage of ng-show -->
+        <div ng-show="toShow">
+            Sign in successful.
+            <br>
+            <input type="button" ng-click="toShow=false" value="Logout">
+        </div>
+    </form>
+  </body>
+</html>
